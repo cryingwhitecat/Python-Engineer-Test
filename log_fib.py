@@ -1,7 +1,7 @@
 from dot import dot
 def log_fib(n):
     A = [[1,1],[1,0]]
-    init_vector = [0,1]
+    init_vector = [[0,1]]
     result = dot(A,init_vector)
     for i in range(n-2):
         result = dot(A,result)

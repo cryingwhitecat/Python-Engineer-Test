@@ -57,27 +57,28 @@ def mv_multiplication(a,b):
         total = 0
         for j in range(len(vector)):
             total += vector[j]*matrix[i][j]
-        result[i] = total
+        result[0][i] = total
     return result
 
 def init_result(w,h):
-    if h == 1 and w != 1:
-        result = [0 for x in range(w)]
-        return result
-    elif w == 1 and h != 1:
-        result = [0 for y in range(h)]
-        return result
-    result =  [[0 for x in range(w)] for y in range(h)]
+    result = [[0 for x in range(w)] for y in range(h)]
+    # if h == 1 and w != 1:
+    #     result = [0 for x in range(w)]
+    #     return result
+    # elif w == 1 and h != 1:
+    #     result = [0 for y in range(h)]
+    #     return result
+    # result =  [[0 for x in range(w)] for y in range(h)]
     return result
 
 def multiply_vector(a,b):
 
     if isinstance(a,int):
-        result = [a*b[i] for i in range(len(b))]
+        result = [[a*b[i] for i in range(len(b))]]
         return result
 
     elif isinstance(b,int):
-        result = [b*a[i] for i in range(len(a))]
+        result = [[b*a[i] for i in range(len(a))]]
         return result
 
 
@@ -101,8 +102,8 @@ def multiply_matrices(a,b):
     return result
 
 if __name__ == "__main__":
-    X = [[1,2,3]]
-    Y = [[5,8,1],[5,2,2]]
+    X = [[1,1],[1,0]]
+    Y = [[0,1]]
     result = dot(X,Y)
     if result is not None:
         print(result)
